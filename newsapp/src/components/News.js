@@ -15,8 +15,8 @@ export default class News extends Component {
   componentDidMount(props) {
     axios
       .get(
-        // "https://gnews.io/api/v4/top-headlines?country=pk&lang=en&apikey=d123564b538f828838a90f39b3eed9fe"
-        'https://newsapi.org/v2/top-headlines?country=in&apiKey=2d5d6108c52b4e7781b7c229d4679c0c&page=2'
+        "https://gnews.io/api/v4/top-headlines?country=in&lang=en&apikey=d123564b538f828838a90f39b3eed9fe"
+        // 'https://newsapi.org/v2/top-headlines?country=in&apiKey=2d5d6108c52b4e7781b7c229d4679c0c&page=2'
       )
       .then((response) => {
         if (response.data.articles !== undefined) {
