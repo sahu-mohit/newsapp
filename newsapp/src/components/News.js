@@ -12,10 +12,11 @@ export default class News extends Component {
     // console.log("constructor"+ this.state.artical);
   }
 
-  componentDidMount() {
+  componentDidMount(props) {
     axios
       .get(
-        "https://gnews.io/api/v4/top-headlines?country=in&language=in&apikey=d123564b538f828838a90f39b3eed9fe"
+        // "https://gnews.io/api/v4/top-headlines?country=pk&lang=en&apikey=d123564b538f828838a90f39b3eed9fe"
+        'https://newsapi.org/v2/top-headlines?country=in&apiKey=2d5d6108c52b4e7781b7c229d4679c0c&page=2'
       )
       .then((response) => {
         if (response.data.articles !== undefined) {
@@ -28,6 +29,15 @@ export default class News extends Component {
         console.error(error);
       });
   }
+
+  prevviousButton = ()=>{
+    console.log("previous");
+  }
+
+  nextButton = ()=>{
+    console.log("");
+  }
+
   render() {
     return (
       <div className="container my-3">
@@ -56,6 +66,10 @@ export default class News extends Component {
               </div>
             );
           })}
+        </div>
+        <div className="row justify-content-between">
+        <button type="button" className="col-auto btn btn-dark" onClick={this.prevviousButton}>&#8249; Prev</button>
+        <button type="button" className="col-auto btn btn-dark" onClick={this.nextButton}>Next &#8250;</button>
         </div>
       </div>
     );
