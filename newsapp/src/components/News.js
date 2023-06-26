@@ -15,7 +15,7 @@ export default class News extends Component {
   componentDidMount() {
     axios
       .get(
-        "https://gnews.io/api/v4/top-headlines?countries=in&apikey=d123564b538f828838a90f39b3eed9fe"
+        "https://gnews.io/api/v4/top-headlines?country=in&language=in&apikey=d123564b538f828838a90f39b3eed9fe"
       )
       .then((response) => {
         if (response.data.articles !== undefined) {
@@ -48,7 +48,7 @@ export default class News extends Component {
                   }
                   imageurl={
                     element.image === null
-                      ? "https://scitechdaily.com/images/Atomic-Nucleus-Art-Concept.jpg"
+                      ? "https://dnd2oi6izkvoi.cloudfront.net/2023/06/26/image/jpeg/84wjzircuaJQGuOM6jIrVmnutSiRz0CfxezGFF9S.jpg"
                       : element.image
                   }
                   newsUrl={element.url}
