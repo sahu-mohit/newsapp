@@ -1,8 +1,7 @@
-import React, { Component } from "react";
-import NewsItems from "./NewsItems";
-
-export default class News extends Component {
-artical = [
+{
+  "status": "ok",
+  "totalResults": 37,
+  "articles": [
     {
       "source": {
         "id": "the-washington-post",
@@ -263,44 +262,5 @@ artical = [
       "publishedAt": "2023-06-23T07:00:00Z",
       "content": "A vibrant aurora display during a geomagnetic storm.  (Image credit: Shutterstock)\r\nEarth's thermosphere recently hit a near 20-year temperature peak\r\n after soaking up energy from geomagnetic storms… [+4443 chars]"
     }
-  ];
-  constructor() {
-    super();
-    this.state = {
-      artical: this.artical,
-    };
-    // console.log(this.state.artical);
-  }
-
-async componentDidMount(){
-    let url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=2d5d6108c52b4e7781b7c229d4679c0c";
-    let data = await fetch(url);
-    console.log(data);
-    // let parseData = await data.json();
-    // console.log(parseData);
-    // this.setState("hello "+{artical:parseData.artical});
-
-  }
-  render() {
-    return (
-      <div className="container my-3">
-        <h2 className="mb-4">Nayi khabarain AapTk</h2>
-        <div className="row">
-          {this.state.artical.map((element) => {
-            return (
-              <div className="col-md-4 mb-4" key={element.url}>
-                <NewsItems
-                  title={element.title === null ? "" : element.title.slice(0,40)}
-                  // discription={element.description}
-                  discription={element.description === null ? "" :element.description.slice(0,70)+"..."}
-                  imageurl={element.urlToImage}
-                  newsUrl={element.url}
-                />
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    );
-  }
+  ]
 }

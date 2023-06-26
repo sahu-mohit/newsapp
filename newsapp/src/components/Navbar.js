@@ -7,7 +7,7 @@ export default class Navbar extends Component {
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <div className="container-fluid">
             <a className="navbar-brand" href="/">
-              AppTk
+              AapTk
             </a>
             <button
               className="navbar-toggler"
@@ -76,7 +76,7 @@ export default class Navbar extends Component {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    Country
+                    Select Country
                   </a>
                   <ul
                     className="dropdown-menu"
@@ -84,22 +84,27 @@ export default class Navbar extends Component {
                   >
                     <li>
                       <a className="dropdown-item" href="/">
-                        Local News
+                        India
                       </a>
                     </li>
                     <li>
                       <a className="dropdown-item" href="/">
-                        Politics News
+                        Australia
                       </a>
                     </li>
                     <li>
                       <a className="dropdown-item" href="/">
-                        Cricket Newa
+                        America
                       </a>
                     </li>
                     <li>
                       <a className="dropdown-item" href="/">
-                        Bollywood News
+                      Bangladesh
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="/">
+                      Pakistan
                       </a>
                     </li>
                   </ul>
