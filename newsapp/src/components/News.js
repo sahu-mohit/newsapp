@@ -1,28 +1,43 @@
 import React, { Component } from "react";
 import NewsItems from "./NewsItems";
 import axios from "axios";
+import Spinner from "./Spinner";
+import PropTypes from 'prop-types'
 
 export default class News extends Component {
   articles = [];
+
+  static defaultProps = {
+    country : "in",
+    category : "general"
+  }
+  
+  static propTypes = {
+    country : PropTypes.string,
+    category : PropTypes.string
+  }
+
   constructor() {
     super();
     this.state = {
       articles: this.articles,
+      loading:true
     };
-    // console.log("constructor"+ this.state.artical);
   }
-
-  componentDidMount(props) {
-    axios
+  async componentDidMount(props) {
+  await axios
       .get(
-        "https://gnews.io/api/v4/top-headlines?country=in&lang=en&apikey=d123564b538f828838a90f39b3eed9fe"
-        // 'https://newsapi.org/v2/top-headlines?country=in&apiKey=2d5d6108c52b4e7781b7c229d4679c0c&page=2'
+        // `https://gnews.io/api/v4/top-headlines?country=in&lang=en&apikey=d123564b538f828838a90f39b3eed9fe&country=${this.category}`
+        `https://newsapi.org/v2/top-headlines?country=in&apiKey=2d5d6108c52b4e7781b7c229d4679c0c&country=${this.category}`
       )
-      .then((response) => {
+      .then(
+        (response) => {
         if (response.data.articles !== undefined) {
           this.setState({
-            articles: response.data.articles
-        })
+            articles: response.data.articles,
+            loading : false
+        }
+        )
         }
       })
       .catch((error) => {
@@ -41,7 +56,8 @@ export default class News extends Component {
   render() {
     return (
       <div className="container my-3">
-        <h2 className="mb-4">Nayi khabarain AapTk</h2>
+        <h2 className="mb-4 text-center">Nayi khabarain AapTk</h2>
+        {this.state.loading && <Spinner/>}
         <div className="row">
           {this.state.articles.map((element) => {
             return (
@@ -50,7 +66,6 @@ export default class News extends Component {
                   title={
                     element.title === null ? "" : element.title.slice(0, 40)
                   }
-                  // discription={element.description}
                   discription={
                     element.description === null
                       ? ""
@@ -66,10 +81,6 @@ export default class News extends Component {
               </div>
             );
           })}
-        </div>
-        <div className="row justify-content-between">
-        <button type="button" className="col-auto btn btn-dark" onClick={this.prevviousButton}>&#8249; Prev</button>
-        <button type="button" className="col-auto btn btn-dark" onClick={this.nextButton}>Next &#8250;</button>
         </div>
       </div>
     );
