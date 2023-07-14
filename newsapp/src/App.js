@@ -20,10 +20,10 @@ export default class App extends Component {
         <Navbar country={this.country}/>
         <Routes>
           <Route path="/india" element = {<News country="in"/>}/>
-          <Route path="/australia" element = {<News/>}/>
-          <Route path="/america" element = {<News/>}/>
-          <Route path="/bangladesh" element = {<News/>}/>
-          <Route path="/pakistan" element = {<News/>}/>
+          <Route path="/australia" element = {<News country="au"/>}/>
+          <Route path="/switzerland" element = {<News country="ch"/>}/>
+          <Route path="/unitedstates " element = {<News country="us"/>}/>
+          <Route path="/pakistan" element = {<News country="pk"/>}/>
         </Routes>
         </Router>
       </div>

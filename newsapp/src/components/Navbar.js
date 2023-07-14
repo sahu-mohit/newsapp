@@ -9,7 +9,7 @@ export default class Navbar extends Component {
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">
               AapTk
-              </Link>
+            </Link>
             <button
               className="navbar-toggler"
               type="button"
@@ -29,7 +29,7 @@ export default class Navbar extends Component {
                 <li className="nav-item">
                   <Link className="nav-link active" aria-current="page" to="#">
                     Home
-                    </Link>
+                  </Link>
                 </li>
                 <li className="nav-item dropdown">
                   <Link
@@ -41,30 +41,30 @@ export default class Navbar extends Component {
                     aria-expanded="false"
                   >
                     News Type
-                    </Link>
+                  </Link>
                   <ul
                     className="dropdown-menu"
                     aria-labelledby="navbarDropdown"
                   >
                     <li>
-                      <Link className="dropdown-item" to="general">
+                      <Link className="dropdown-item" to="/general">
                         Local News
-                        </Link>
+                      </Link>
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="">
+                      <Link className="dropdown-item" to="/politics">
                         Politics News
-                        </Link>
+                      </Link>
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="/">
+                      <Link className="dropdown-item" to="/circket">
                         Cricket Newa
-                        </Link>
+                      </Link>
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="/">
+                      <Link className="dropdown-item" to="/bollywood">
                         Bollywood News
-                        </Link>
+                      </Link>
                     </li>
                   </ul>
                 </li>
@@ -78,7 +78,7 @@ export default class Navbar extends Component {
                     aria-expanded="false"
                   >
                     Select Country
-                   </Link>
+                  </Link>
                   <ul
                     className="dropdown-menu"
                     aria-labelledby="navbarDropdown"
@@ -86,26 +86,26 @@ export default class Navbar extends Component {
                     <li>
                       <Link className="dropdown-item" to="/india">
                         India
-                        </Link>
+                      </Link>
                     </li>
                     <li>
                       <Link className="dropdown-item" to="/australia">
                         Australia
-                        </Link>
+                      </Link>
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="/america">
-                        America
-                        </Link>
+                      <Link className="dropdown-item" to="/switzerland">
+                        Switzerland
+                      </Link>
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="/bangladesh">
-                      Bangladesh
+                      <Link className="dropdown-item" to="/unitedstates">
+                        United States
                       </Link>
                     </li>
                     <li>
                       <Link className="dropdown-item" to="/pakistan">
-                      Pakistan
+                        Pakistan
                       </Link>
                     </li>
                   </ul>
@@ -113,12 +113,12 @@ export default class Navbar extends Component {
                 <li className="nav-item">
                   <Link className="nav-link" to="/">
                     About Us
-                    </Link>
+                  </Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/">
                     Contact Us
-                    </Link>
+                  </Link>
                 </li>
               </ul>
               <form className="d-flex">
